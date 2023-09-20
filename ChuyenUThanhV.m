@@ -1,0 +1,17 @@
+function V = ChuyenUThanhV(U)
+format long;
+global gam;
+
+[tam, n] = size(U);
+
+for j = 1 : n
+p = U(1, j);
+u = U(2, j);
+r = U(3, j);
+
+ep = p/(gam - 1)/r;
+e = ep + u^2/2;
+
+V(:, j) = [r; r*u; r*e];
+end
+end
